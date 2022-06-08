@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Angular-EComerce.iml" filepath="$PROJECT_DIR$/.idea/Spring-Angular-EComerce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinebookstore/onlinebookstore.iml" filepath="$PROJECT_DIR$/onlinebookstore/onlinebookstore.iml" />
     </modules>
   </component>
 </project>
