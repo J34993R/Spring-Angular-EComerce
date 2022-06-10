@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookService } from './services/book.service';
 import { BookCategoryComponent } from './components/book-category/book-category.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -22,13 +23,17 @@ const routes: Routes = [
   {
     path: '**', component: PageNotFoundComponent
   },
+  {
+    path: 'search/:keyword', component: BookListComponent
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    BookCategoryComponent
+    BookCategoryComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
