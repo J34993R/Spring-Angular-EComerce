@@ -16,6 +16,11 @@ private categoryUrl = "http://localhost:8080/api/v1/book-category";
 
   constructor(private httpClient: HttpClient) { }
 
+  get(bookId: number): Observable<Book>{
+    const bookDetailsUrl = `${this.baseUrl}/${bookId}`;
+    return this.httpClient.get<Book>(bookDetailsUrl);
+  }
+
   getBooks(theCategoryId: number): Observable<Book[]>{
     const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}`
     return this.getBooksList(searchUrl);
