@@ -9,8 +9,10 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookService } from './services/book.service';
 import { BookCategoryComponent } from './components/book-category/book-category.component';
 import { SearchComponent } from './components/search/search.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 const routes: Routes = [
+  {path: 'books/:id', component: BookDetailsComponent},
   {path: 'books', component: BookListComponent},
   {path: 'search/:keyword', component: BookListComponent},
   {path: 'category/:id', component: BookListComponent},
@@ -24,6 +26,7 @@ const routes: Routes = [
     BookListComponent,
     BookCategoryComponent,
     SearchComponent,
+    BookDetailsComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
   providers: [BookService],
