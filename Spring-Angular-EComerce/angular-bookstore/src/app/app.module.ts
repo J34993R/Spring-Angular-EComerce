@@ -11,21 +11,11 @@ import { BookCategoryComponent } from './components/book-category/book-category.
 import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  {
-    path: 'books', component: BookListComponent
-  },
-  {
-    path: 'category/:id', component: BookListComponent
-  },
-  {
-    path: '', redirectTo: '/books', pathMatch: 'full'
-  },
-  {
-    path: '**', component: PageNotFoundComponent
-  },
-  {
-    path: 'search/:keyword', component: BookListComponent
-  },
+  {path: 'books', component: BookListComponent},
+  {path: 'search/:keyword', component: BookListComponent},
+  {path: 'category/:id', component: BookListComponent},
+  {path: '', redirectTo: '/books', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -33,16 +23,10 @@ const routes: Routes = [
     AppComponent,
     BookListComponent,
     BookCategoryComponent,
-    SearchComponent
+    SearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [
-    BookService
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+  providers: [BookService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
