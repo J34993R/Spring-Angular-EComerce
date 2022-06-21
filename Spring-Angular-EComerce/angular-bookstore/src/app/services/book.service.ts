@@ -21,9 +21,9 @@ private categoryUrl = "http://localhost:8080/api/v1/book-category";
     return this.httpClient.get<Book>(bookDetailsUrl);
   }
 
-  getBooks(theCategoryId: number): Observable<Book[]>{
-    const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}`
-    return this.getBooksList(searchUrl);
+  getBooks(theCategoryId: number, currentPage: number, pageSize: number): Observable<GetResponseBooks>{
+    const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}&page=${currentPage}&size=${pageSize}`
+    return this.httpClient.get<GetResponseBooks>(searchUrl);
   }
 
   private getBooksList(searchUrl: string): Observable<Book[]> {
@@ -48,7 +48,14 @@ private categoryUrl = "http://localhost:8080/api/v1/book-category";
 interface GetResponseBooks{
   _embedded: {
     books: Book[];
+  },
+  page: {
+    size: number;
+    totalElements: number;
+    totalPage: number;
+    number: number;
   }
+
 }
 
 interface GetResponseBookCategory{
